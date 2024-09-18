@@ -1,6 +1,6 @@
 import { By, until } from "selenium-webdriver";
 
-export default async function createNotice(driver) {
+export default async function createNoticeInInstitute(driver) {
   describe("create notices in institute ", function () {
     this.timeout(30000);
     before(function () {

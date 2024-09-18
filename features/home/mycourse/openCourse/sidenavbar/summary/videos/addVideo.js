@@ -48,6 +48,7 @@ export default async function addVideo(driver) {
           20000
         )
         .click();
+        await driver.sleep(1000);
 
       // Fill in the video title
       await driver
@@ -96,6 +97,7 @@ export default async function addVideo(driver) {
           20000
         )
         .click();
+        await driver.sleep(3000);
     });
 
     after(async function () {
@@ -113,4 +115,4 @@ export default async function addVideo(driver) {
       await driver.sleep(10000);
     });
   });
-}
+};

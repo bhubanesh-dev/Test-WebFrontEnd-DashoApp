@@ -94,6 +94,8 @@ export default async function createCourse(driver) {
         )
         .click();
 
+        await driver.sleep(3000);
+
       // main test
       // Check if the button with text "sample test" is present
       // let button = await driver.findElement(

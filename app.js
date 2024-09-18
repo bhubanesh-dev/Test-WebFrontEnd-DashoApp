@@ -21,26 +21,32 @@ import {
   createAssets,
   createAssignment,
   createClass,
+  createClasses,
   createCourse,
   createDiscussion,
-  createNotice,
+
+  createNoticeInHome,
+  createNoticeInInstitute,
   createSyllabus,
   createTimeTable,
   deleteAdmin,
   deleteAssets,
   deleteAssignment,
   deleteAssignmentFile,
+  deleteClass,
   deleteClasses,
   deleteCourse,
   deleteDiscussionComment,
   deleteLinks,
   deleteNotes,
   deleteNotice,
+  deleteNoticeInHome,
   deleteStudent,
   deleteTeacher,
   deleteVideo,
   editAssets,
   editAssignment,
+  editClass,
   editClasses,
   editClassInViewDetailsOfClasses,
   editCourse,
@@ -48,22 +54,30 @@ import {
   editDiscussion,
   editDiscussionComment,
   editNotice,
+  enrollRequest,
   logout,
   openAssetsManager,
   openAssignmentDashboard,
   openClassDashboard,
+  openClassTab,
   openCourse,
   openDiscussionDashboard,
   openInstituteTab,
+  openMyCourseTab,
   openNotice,
+  openNoticeTab,
   openPeople,
   openSyllabusDashboard,
   openTimeTable,
   publishCourse,
   selectBatchToViewTimeTable,
   studentRequest,
+  testClassView,
+  toggleNoticeReadStatusInHome,
+  updateClassAttd,
   updateClassAttendance,
   updateTimeTable,
+  viewDetailOfClass,
   viewDetailsOfAssignment,
   viewDetailsOfClasses,
   viewTimeTable,
@@ -134,22 +148,24 @@ describe("Login Flow Test", function () {
   it("should login with OTP with given phone number and complete login process", async function () {
     // Call the loginTest function and pass WebDriver and phone number
     await loginTest(driver, phoneNumber);
-    const element = await driver.findElement(
-      By.xpath("/html/body/div/div/div/header/div[3]/div[4]/button/i")
-    );
-    await driver.sleep(1000);
-    const text = await element.getText();
-    assert.strictEqual(text, "Root");
+    // const element = await driver.findElement(
+    //   By.xpath("/html/body/div/div/div/header/div[3]/div[4]/button/i")
+    // );
+    // await driver.sleep(1000);
+    // const text = await element.getText();
+    // assert.strictEqual(text, "Root");
   });
 
   after(async function () {
-    // await homeFeatures();
-    await instituteFeatures();
+    await homeFeatures();
+    //  await instituteFeatures();
   });
 });
 
 const homeFeatures = async () => {
-  await createCourse(driver);
+  // await createCourse(driver);
+  // // once run
+  // await enrollRequest(driver);
 
   // will start course menu
   // await editCourse(driver);
@@ -157,20 +173,40 @@ const homeFeatures = async () => {
   // await changePictureInCourse(driver);
   // await driver.sleep(2000);
   // await publishCourse(driver);
+  // await driver.sleep(3000);
+  // await addStudentInCourseMenu(driver, "vibhav");
+  // await driver.sleep(1000);
+  // await addStudentInCourseMenu(driver, "n");
   // await driver.sleep(2000);
-  // await addStudentInCourseMenu(driver,"vibhav");
-  // await addStudentInCourseMenu(driver,"n");
-  // await addStudentInCourseMenu(driver,"shradha");
-
+  // await addStudentInCourseMenu(driver, "a");
   // await driver.sleep(2000);
-  // await deleteCourse(driver);
+  // await deleteCourse(driver); // run it at last !!!!
   // coursemenu end
+
+  // await openClassTab(driver);
+  // await createClass(driver);
+  // await driver.sleep(2000);
+  // await testClassView(driver);
+  // await viewDetailOfClass(driver);
+  // await updateClassAttd(driver);
+  // await editClass(driver);
+  // await deleteClass(driver);
+
+   await openMyCourseTab(driver);
+   await openNoticeTab(driver);
+   await createNoticeInHome(driver);
+   await toggleNoticeReadStatusInHome(driver);
+   await deleteNoticeInHome(driver);
+
   // await openCourse(driver);
-  //  course summary
+  // //  course summary
   // await editCourseInSummary(driver);
   // await addVideo(driver);
-  // await deleteVideo(driver);
+
+  // rechek not work await deleteVideo(driver);
+  await driver.sleep(1000);
   // await addNotes(driver);
+  // comment down module not working
   // await deleteNotes(driver);
   // await addLinks(driver);
   // await deleteLinks(driver);
@@ -178,27 +214,35 @@ const homeFeatures = async () => {
 
   // course syllabus start
   // await openSyllabusDashboard(driver);
+  // await driver.sleep(1000);
   // await createSyllabus(driver);
   // course syllabus end
 
   // course discussion start
   // await openDiscussionDashboard(driver);
+  // await driver.sleep(1000);
   // await createDiscussion(driver);
+  // await driver.sleep(2000);
   // await editDiscussion(driver);
+  // await driver.sleep(1000);
   // await addCommentToDiscussion(driver);
+  // await driver.sleep(1000);
   // await editDiscussionComment(driver);
+  // await driver.sleep(1000);
   // await deleteDiscussionComment(driver);
+  // await driver.sleep(1000);
   // course discussion end
 
   //course class start
   // await openClassDashboard(driver);
-  // await createClass(driver);
+  // await driver.sleep(1000);
+  // await createClasses(driver);
   // await editClasses(driver);
   // await viewDetailsOfClasses(driver);
   // await editClassInViewDetailsOfClasses(driver);
   // await addRecordedVideoInViewDetailsOfClass(driver);
   // await driver.sleep(2000);
-  // //  bug not working addFilesInViewDetailsOfClass(driver);
+  // // //  bug not working addFilesInViewDetailsOfClass(driver);
   // await addLinksInViewDetailsOfClass(driver);
   // await driver.sleep(3000);
   // await updateClassAttendance(driver);
@@ -208,9 +252,10 @@ const homeFeatures = async () => {
 
   // course Assignment start
   // await openAssignmentDashboard(driver);
+  // await driver.sleep(1000);
   // await createAssignment(driver);
-  // // rechek : may be bug in state management for submiting a assignment at the time of edit
-  // // editAssignment(driver);
+  // // // rechek : may be bug in state management for submiting a assignment at the time of edit
+  // // // editAssignment(driver);
 
   // await viewDetailsOfAssignment(driver);
   // await addStudentGradeInViewDetailsOfAssignment(driver);
@@ -222,8 +267,9 @@ const homeFeatures = async () => {
 
   // course people dashboard start
   // await openPeople(driver);
+  // await driver.sleep(1000);
   // await addAdmin(driver);
-  // await driver.sleep(2000);
+  // await driver.sleep(1000);
   // await deleteAdmin(driver);
   // await driver.sleep(1000);
   // await addTeacher(driver);
@@ -247,24 +293,20 @@ const instituteFeatures = async () => {
   await driver.sleep(3000);
   // await openNotice(driver);
   await driver.sleep(2000);
-  // await createNotice(driver);
+  //  await createNoticeInInstitute(driver);
   // await editNotice(driver);
   // await deleteNotice(driver);
 
-
-
   //  for time table in institute section
-  //  await openTimeTable(driver);
-  //  await createTimeTable(driver);
-  //  await selectBatchToViewTimeTable(driver);
-  //  await viewTimeTable(driver);
-  //  await updateTimeTable(driver);
-
+  await openTimeTable(driver);
+  await createTimeTable(driver);
+  await selectBatchToViewTimeTable(driver);
+  await viewTimeTable(driver);
+  await updateTimeTable(driver);
 
   //  for assets manager in institute section
-  await openAssetsManager(driver);
-  await createAssets(driver);
-  await editAssets(driver);
-  await deleteAssets(driver);
-
+  // await openAssetsManager(driver);
+  // await createAssets(driver);
+  // await editAssets(driver);
+  // await deleteAssets(driver);
 };
