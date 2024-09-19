@@ -16,7 +16,7 @@ export default async function addStudentInCourseMenu(driver, name) {
         .wait(
           until.elementLocated(
             By.xpath(
-              "/html/body/div/div/div/div[2]/div/div/div[4]/div[1]/div[2]/div[2]/button[2]"
+              "/html/body/div/div/div/div[2]/div/div/div[4]/div[2]/div[2]/div[2]/button[2]"
             )
           ),
           10000
@@ -28,7 +28,7 @@ export default async function addStudentInCourseMenu(driver, name) {
         .wait(
           until.elementLocated(
             By.xpath(
-              "/html/body/div/div/div/div[2]/div/div/div[4]/div[1]/div[3]/div/div[3]/input"
+              "/html/body/div/div/div/div[2]/div/div/div[4]/div/div[3]/div/div[3]/input"
             )
           ),
           10000
@@ -40,7 +40,7 @@ export default async function addStudentInCourseMenu(driver, name) {
         .wait(
           until.elementLocated(
             By.xpath(
-              "/html/body/div/div/div/div[2]/div/div/div[4]/div[1]/div[3]/div/div[4]/div[2]/button"
+              "/html/body/div/div/div/div[2]/div/div/div[4]/div/div[3]/div/div[5]/div[2]/button"
             )
           ),
           10000
@@ -52,7 +52,7 @@ export default async function addStudentInCourseMenu(driver, name) {
         .wait(
           until.elementLocated(
             By.xpath(
-              "/html/body/div/div/div/div[2]/div/div/div[4]/div[1]/div[3]/div/div[1]/div"
+              "/html/body/div/div/div/div[2]/div/div/div[4]/div[2]/div[3]/div/div[1]/div"
             )
           ),
           10000

@@ -11,6 +11,8 @@ export default async function deleteClass(driver) {
     });
 
     it("should delete a class", async function () {
+      await driver.sleep(1500);
+      
 
         
         // Click on the menu button of the specific class

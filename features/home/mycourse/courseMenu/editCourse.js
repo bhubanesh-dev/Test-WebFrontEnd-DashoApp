@@ -21,7 +21,7 @@ export default async function editCourse(driver) {
         .wait(
           until.elementLocated(
             By.xpath(
-              "/html/body/div/div/div/div[2]/div/div/div[4]/div[1]/div[1]/div/div/div[2]"
+              "/html/body/div/div/div/div[2]/div/div/div[4]/div[2]/div[1]/div/div/div[2]"
             )
           ),
           10000
@@ -33,7 +33,7 @@ export default async function editCourse(driver) {
         .wait(
           until.elementLocated(
             By.xpath(
-              "/html/body/div/div/div/div[2]/div/div/div[4]/div[1]/div[1]/div/div/div[2]/div/div/button[1]"
+              "/html/body/div/div/div/div[2]/div/div/div[4]/div[2]/div[1]/div/div/div[2]/div/div/button[1]"
             )
           ),
           10000

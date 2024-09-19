@@ -57,7 +57,7 @@ const loginTest = async (driver, phoneNumber) => {
       .click();
 
     // Wait for the response and page to load
-    await driver.sleep(1000);
+    await driver.sleep(500);
 
    
   } catch (error) {

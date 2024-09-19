@@ -17,6 +17,7 @@ import {
   addVideo,
   changePictureInCourse,
   closeClassesDashBoard,
+  closeCourse,
   closeViewDetailsOfAssignment,
   createAssets,
   createAssignment,
@@ -24,7 +25,6 @@ import {
   createClasses,
   createCourse,
   createDiscussion,
-
   createNoticeInHome,
   createNoticeInInstitute,
   createSyllabus,
@@ -128,7 +128,7 @@ describe("WebDriver Tests", function () {
   });
 
   it("should open DashoApp and check title", async function () {
-    await driver.get("http://localhost:3000/");
+    await driver.get("https://dashoapp.com/");
     const title = await driver.getTitle();
     assert.strictEqual(title, "DashoApp"); // Correct the expected title here
   });
@@ -163,45 +163,37 @@ describe("Login Flow Test", function () {
 });
 
 const homeFeatures = async () => {
-  // await createCourse(driver);
   // // once run
-  // await enrollRequest(driver);
+  await enrollRequest(driver);
+  await createCourse(driver);
+  await addStudentInCourseMenu(driver, "vibhav");
+  await addStudentInCourseMenu(driver, "n");
+  await addStudentInCourseMenu(driver, "a");
 
   // will start course menu
-  // await editCourse(driver);
-  // await driver.sleep(2000);
-  // await changePictureInCourse(driver);
-  // await driver.sleep(2000);
-  // await publishCourse(driver);
-  // await driver.sleep(3000);
-  // await addStudentInCourseMenu(driver, "vibhav");
-  // await driver.sleep(1000);
-  // await addStudentInCourseMenu(driver, "n");
-  // await driver.sleep(2000);
-  // await addStudentInCourseMenu(driver, "a");
-  // await driver.sleep(2000);
-  // await deleteCourse(driver); // run it at last !!!!
+  // run it at last !!!!
   // coursemenu end
 
-  // await openClassTab(driver);
-  // await createClass(driver);
-  // await driver.sleep(2000);
-  // await testClassView(driver);
-  // await viewDetailOfClass(driver);
-  // await updateClassAttd(driver);
-  // await editClass(driver);
-  // await deleteClass(driver);
+  await openClassTab(driver);
+  await driver.sleep(200);
+  await createClass(driver);
+  await driver.sleep(2000);
+  await testClassView(driver);
+  await viewDetailOfClass(driver);
+  await updateClassAttd(driver);
+  await editClass(driver);
+  await deleteClass(driver);
 
-   await openMyCourseTab(driver);
-   await openNoticeTab(driver);
-   await createNoticeInHome(driver);
-   await toggleNoticeReadStatusInHome(driver);
-   await deleteNoticeInHome(driver);
+  await openNoticeTab(driver);
+  await createNoticeInHome(driver);
+  await toggleNoticeReadStatusInHome(driver);
+  await deleteNoticeInHome(driver);
 
-  // await openCourse(driver);
+  await openMyCourseTab(driver);
+  await openCourse(driver);
   // //  course summary
-  // await editCourseInSummary(driver);
-  // await addVideo(driver);
+  await editCourseInSummary(driver);
+  await addVideo(driver);
 
   // rechek not work await deleteVideo(driver);
   await driver.sleep(1000);
@@ -213,77 +205,89 @@ const homeFeatures = async () => {
   // course summary end
 
   // course syllabus start
-  // await openSyllabusDashboard(driver);
-  // await driver.sleep(1000);
-  // await createSyllabus(driver);
+  await openSyllabusDashboard(driver);
+  await driver.sleep(1000);
+  await createSyllabus(driver);
   // course syllabus end
 
   // course discussion start
-  // await openDiscussionDashboard(driver);
-  // await driver.sleep(1000);
-  // await createDiscussion(driver);
-  // await driver.sleep(2000);
-  // await editDiscussion(driver);
-  // await driver.sleep(1000);
-  // await addCommentToDiscussion(driver);
-  // await driver.sleep(1000);
-  // await editDiscussionComment(driver);
-  // await driver.sleep(1000);
-  // await deleteDiscussionComment(driver);
-  // await driver.sleep(1000);
+  await openDiscussionDashboard(driver);
+  await driver.sleep(1000);
+  await createDiscussion(driver);
+  await driver.sleep(2000);
+  await editDiscussion(driver);
+  await driver.sleep(1000);
+  await addCommentToDiscussion(driver);
+  await driver.sleep(1000);
+  await editDiscussionComment(driver);
+  await driver.sleep(1000);
+  await deleteDiscussionComment(driver);
+  await driver.sleep(1000);
   // course discussion end
 
   //course class start
-  // await openClassDashboard(driver);
-  // await driver.sleep(1000);
-  // await createClasses(driver);
-  // await editClasses(driver);
-  // await viewDetailsOfClasses(driver);
-  // await editClassInViewDetailsOfClasses(driver);
-  // await addRecordedVideoInViewDetailsOfClass(driver);
-  // await driver.sleep(2000);
-  // // //  bug not working addFilesInViewDetailsOfClass(driver);
-  // await addLinksInViewDetailsOfClass(driver);
-  // await driver.sleep(3000);
-  // await updateClassAttendance(driver);
-  // await closeClassesDashBoard(driver);
-  // await deleteClasses(driver);
+  await openClassDashboard(driver);
+  await driver.sleep(1000);
+  await createClasses(driver);
+  await editClasses(driver);
+  await viewDetailsOfClasses(driver);
+  await editClassInViewDetailsOfClasses(driver);
+  await addRecordedVideoInViewDetailsOfClass(driver);
+  await driver.sleep(2000);
+  // //  bug not working addFilesInViewDetailsOfClass(driver);
+  await addLinksInViewDetailsOfClass(driver);
+  await driver.sleep(3000);
+  await updateClassAttendance(driver);
+  await closeClassesDashBoard(driver);
+  await deleteClasses(driver);
   // // course class end
 
   // course Assignment start
-  // await openAssignmentDashboard(driver);
-  // await driver.sleep(1000);
-  // await createAssignment(driver);
+  await openAssignmentDashboard(driver);
+  await driver.sleep(1000);
+  await createAssignment(driver);
+  await driver.sleep(15000);
   // // // rechek : may be bug in state management for submiting a assignment at the time of edit
-  // // // editAssignment(driver);
+  // await  editAssignment(driver);
 
-  // await viewDetailsOfAssignment(driver);
-  // await addStudentGradeInViewDetailsOfAssignment(driver);
-  // await driver.sleep(1000);
-  // await closeViewDetailsOfAssignment(driver);
-  // await deleteAssignment(driver);
+  await viewDetailsOfAssignment(driver);
+  await driver.sleep(1000);
+  await addStudentGradeInViewDetailsOfAssignment(driver);
+  await driver.sleep(1000);
+  await closeViewDetailsOfAssignment(driver);
+  await deleteAssignment(driver);
 
   // course Assignment end
 
   // course people dashboard start
-  // await openPeople(driver);
-  // await driver.sleep(1000);
-  // await addAdmin(driver);
-  // await driver.sleep(1000);
-  // await deleteAdmin(driver);
-  // await driver.sleep(1000);
-  // await addTeacher(driver);
-  // await driver.sleep(1000);
-  // await deleteTeacher(driver);
-  // await driver.sleep(1000);
-  // await addStudent(driver);
-  // await deleteStudent(driver);
-  // await driver.sleep(4000);
-  // await studentRequest(driver);
-  // await driver.sleep(1000);
-  // await deleteStudent(driver);
+  await openPeople(driver);
+  await driver.sleep(1000);
+  await addAdmin(driver);
+  await driver.sleep(1000);
+  await deleteAdmin(driver);
+  await driver.sleep(1000);
+  await addTeacher(driver);
+  await driver.sleep(1000);
+  await deleteTeacher(driver);
+  await driver.sleep(1000);
+  await addStudent(driver);
+  await deleteStudent(driver);
+  await driver.sleep(20000);
+  await studentRequest(driver);
+  await driver.sleep(1000);
+  await deleteStudent(driver);
 
   // await driver.sleep(1000);
+  await closeCourse(driver);
+  await editCourse(driver);
+  await driver.sleep(2000);
+  await changePictureInCourse(driver);
+  await driver.sleep(2000);
+  await publishCourse(driver);
+  await driver.sleep(3000);
+
+  await driver.sleep(2000);
+  await deleteCourse(driver);
 
   // await logout(driver);
 };

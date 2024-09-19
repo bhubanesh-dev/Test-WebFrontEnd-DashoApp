@@ -11,6 +11,7 @@ export default async function editClass(driver) {
         });
 
         it("should edit the class", async function () {
+            await driver.sleep(1500);
             try {
                 // Step 1: Locate the element container
                 const containerElement = await driver.wait(

@@ -12,7 +12,6 @@ export default async function deleteNoticeInHome(driver) {
 
         it("should delete a specific notice", async function () {
             try {
-                
 
                 // Step 2: Locate the notice element
                 const noticeElement = await driver.wait(

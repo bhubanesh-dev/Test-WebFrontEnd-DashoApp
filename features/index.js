@@ -3,6 +3,7 @@ import enrollRequest from "./home/mycourse/exploreCourse/enrollRequest.js";
 import editCourseInSummary from "./home/mycourse/openCourse/sidenavbar/summary/about/editCourseInSummary.js";
 import logout from "./logout/logout.js";
 import openCourse from "./home/mycourse/openCourse/openCourse.js";
+import closeCourse from "./home/mycourse/openCourse/closeCourse.js";
 import addVideo from "./home/mycourse/openCourse/sidenavbar/summary/videos/addVideo.js";
 import deleteVideo from "./home/mycourse/openCourse/sidenavbar/summary/videos/deleteVideo.js";
 import addNotes from "./home/mycourse/openCourse/sidenavbar/summary/notes/addNotes.js";
@@ -90,6 +91,7 @@ export {
   enrollRequest,
   logout,
   openCourse,
+  closeCourse,
   editCourseInSummary,
   addVideo,
   deleteVideo,

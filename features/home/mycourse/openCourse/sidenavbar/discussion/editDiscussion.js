@@ -20,6 +20,7 @@ export default async function editDiscussion(driver) {
           1000
         )
         .click();
+        await driver.sleep(2000);
       // click on edit button
       await driver
         .wait(
@@ -59,6 +60,7 @@ export default async function editDiscussion(driver) {
           )
         )
         .click();
+        await driver.sleep(2000);
     });
   });
 }

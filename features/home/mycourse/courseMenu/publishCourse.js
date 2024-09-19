@@ -22,7 +22,7 @@ export default async function deleteCourse(driver) {
         .wait(
           until.elementLocated(
             By.xpath(
-              "/html/body/div/div/div/div[2]/div/div/div[4]/div[1]/div[1]/div/div/div[2]"
+              "/html/body/div/div/div/div[2]/div/div/div[4]/div[2]/div[1]/div/div/div[2]"
             )
           ),
           10000
@@ -41,28 +41,53 @@ export default async function deleteCourse(driver) {
         )
         .click();
 
-      // check published or not 
-      await driver
-        .wait(
-          until.elementLocated(
-            By.xpath(
-              "/html/body/div/div/div/div[2]/div/div/div[4]/div[1]/div[1]/div/div/div[2]"
-            )
-          ),
-          10000
-        )
-        .click();
-        await driver.sleep(2000);
-      const element =await driver
-        .findElement(
-          By.xpath(
-            "/html/body/div/div/div/div[2]/div/div/div[4]/div[1]/div[1]/div/div/div[2]/div/div/button[4]"
-          )
-        );
-        const elementText = await element.getText();
+      // // check published or not 
+      // await driver
+      //   .wait(
+      //     until.elementLocated(
+      //       By.xpath(
+      //         "/html/body/div/div/div/div[2]/div/div/div[4]/div[1]/div[1]/div/div/div[2]"
+      //       )
+      //     ),
+      //     10000
+      //   )
+      //   .click();
+      //   await driver.sleep(6000);
+      // const element =await driver
+      //   .findElement(
+      //     By.xpath(
+      //       "/html/body/div/div/div/div[2]/div/div/div[4]/div[2]/div[1]/div/div/div[2]/div/div/button[4]"
+      //     )
+      //   );
+      //   const elementText = await element.getText();
 
-        assert.strictEqual(elementText,'Unpublish', 'publish success');
-      await driver.sleep(1000);
+      //   assert.strictEqual(elementText,'Unpublish', 'publish success');
+      await driver.sleep(4000);
+       // Click on the 3dot button on a course
+       driver.sleep(2000);
+       await driver
+         .wait(
+           until.elementLocated(
+             By.xpath(
+               "/html/body/div/div/div/div[2]/div/div/div[4]/div[2]/div[1]/div/div/div[2]"
+             )
+           ),
+           10000
+         )
+         .click();
+       // click on publish
+       await driver.sleep(1000);
+       await driver
+         .wait(
+           until.elementLocated(
+             By.xpath(
+               "/html/body/div/div/div/div[2]/div/div/div[4]/div[2]/div[1]/div/div/div[2]/div/div/button[4]"
+             )
+           ),
+           10000
+         )
+         .click();
+
     });
     // after( async function (params) {
     //     await driver

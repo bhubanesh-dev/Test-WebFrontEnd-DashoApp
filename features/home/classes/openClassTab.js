@@ -1,7 +1,7 @@
 import { By, until } from "selenium-webdriver";
 
 export default async function openClassTab(driver) {
-  describe("open delete class tab", function () {
+  describe("open class tab", function () {
     this.timeout(60000); // Set a timeout to 60 seconds
 
     before(async function () {

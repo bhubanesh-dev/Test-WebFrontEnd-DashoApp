@@ -37,104 +37,104 @@ export default async  function viewDetailOfClass(driver) {
 
                 await driver.sleep(2000);
                 await driver.sleep(2000);
-                const EditElement = await driver.wait(
-                    until.elementLocated(
-                        By.xpath("/html/body/div/div/div/div[2]/div/div/div[3]/div[2]/div/div/div/div[2]/div[1]/div[1]/button")
-                    ),
-                    10000
-                );
-                await EditElement.click();
-                console.log("Edit button clicked.");
+                // const EditElement = await driver.wait(
+                //     until.elementLocated(
+                //         By.xpath("/html/body/div/div/div/div[2]/div/div/div[3]/div[2]/div/div/div/div[2]/div[1]/div[1]/button")
+                //     ),
+                //     10000
+                // );
+                // await EditElement.click();
+                // console.log("Edit button clicked.");
 
-                // Wait for the form to appear
-                const formElement = await driver.wait(
-                    until.elementLocated(
-                        By.xpath(
-                            "/html/body/div/div/div/div[2]/div/div/div[3]/div[2]/div/div/div/div[2]/div[1]/div[1]/div/div"
-                        )
-                    ),
-                    10000
-                );
-                await driver.wait(until.elementIsVisible(formElement), 10000);
-                console.log("Form is open.");
-                await driver.sleep(1000);
-                const timeInputField = await driver.wait(
-                    until.elementLocated(
-                        By.xpath(
-                            "/html/body/div/div/div/div[2]/div/div/div[3]/div[2]/div/div/div/div[2]/div[1]/div[1]/div/div/form/div[1]/div[1]/div[2]/div"
-                        )
-                    ),
-                    20000
-                );
-                await driver.wait(until.elementIsVisible(timeInputField), 10000);
+                // // Wait for the form to appear
+                // const formElement = await driver.wait(
+                //     until.elementLocated(
+                //         By.xpath(
+                //             "/html/body/div/div/div/div[2]/div/div/div[3]/div[2]/div/div/div/div[2]/div[1]/div[1]/div/div"
+                //         )
+                //     ),
+                //     10000
+                // );
+                // await driver.wait(until.elementIsVisible(formElement), 10000);
+                // console.log("Form is open.");
+                // await driver.sleep(1000);
+                // const timeInputField = await driver.wait(
+                //     until.elementLocated(
+                //         By.xpath(
+                //             "/html/body/div/div/div/div[2]/div/div/div[3]/div[2]/div/div/div/div[2]/div[1]/div[1]/div/div/form/div[1]/div[1]/div[2]/div"
+                //         )
+                //     ),
+                //     20000
+                // );
+                // await driver.wait(until.elementIsVisible(timeInputField), 10000);
 
-                // Use the driver.actions() method to create an Actions instance
-                const actions = driver.actions();
+                // // Use the driver.actions() method to create an Actions instance
+                // const actions = driver.actions();
 
-                // Hover over the time input field to trigger the dropdown
-                await actions.move({ origin: timeInputField }).perform();
-                console.log("Hovered over the time input field.");
+                // // Hover over the time input field to trigger the dropdown
+                // await actions.move({ origin: timeInputField }).perform();
+                // console.log("Hovered over the time input field.");
 
-                // Wait for the dropdown to appear
-                const dropdownElementDate = await driver.wait(
-                    until.elementLocated(
-                        By.xpath(
-                            "/html/body/div/div/div/div[2]/div/div/div[3]/div[2]/div/div/div/div[2]/div[1]/div[1]/div/div/form/div[1]/div[1]/div[2]/div/div[2]"
-                        )
-                    ),
-                    20000
-                );
-                await driver.wait(until.elementIsVisible(dropdownElementDate), 10000);
-                console.log("Dropdown appeared after hover.");
+                // // Wait for the dropdown to appear
+                // const dropdownElementDate = await driver.wait(
+                //     until.elementLocated(
+                //         By.xpath(
+                //             "/html/body/div/div/div/div[2]/div/div/div[3]/div[2]/div/div/div/div[2]/div[1]/div[1]/div/div/form/div[1]/div[1]/div[2]/div/div[2]"
+                //         )
+                //     ),
+                //     20000
+                // );
+                // await driver.wait(until.elementIsVisible(dropdownElementDate), 10000);
+                // console.log("Dropdown appeared after hover.");
 
-                // Locate and click the specific button in the hours column
-                const hourButton = await driver.wait(
-                    until.elementLocated(
-                        By.xpath(
-                            "/html/body/div/div/div/div[2]/div/div/div[3]/div[2]/div/div/div/div[2]/div[1]/div[1]/div/div/form/div[1]/div[1]/div[2]/div/div[2]/div[1]/button[11]"
-                        )
-                    ),
-                    20000
-                );
-                await driver.wait(until.elementIsVisible(hourButton), 10000);
-                await driver.sleep(1000);
-                await hourButton.click();
-                const minuteButton = await driver.wait(
-                    until.elementLocated(
-                        By.xpath(
-                            "/html/body/div/div/div/div[2]/div/div/div[3]/div[2]/div/div/div/div[2]/div[1]/div[1]/div/div/form/div[1]/div[1]/div[2]/div/div[2]/div[2]/button[9]"
-                        )
-                    ),
-                    20000
-                );
-                await driver.wait(until.elementIsVisible(hourButton), 10000);
-                await minuteButton.click();
-                await driver.sleep(1000);
-                const ampmButton = await driver.wait(
-                    until.elementLocated(
-                        By.xpath(
-                            "/html/body/div/div/div/div[2]/div/div/div[3]/div[2]/div/div/div/div[2]/div[1]/div[1]/div/div/form/div[1]/div[1]/div[2]/div/div[2]/div[3]/button[3]"
-                        )
-                    ),
-                    20000
-                );
-                await driver.wait(until.elementIsVisible(hourButton), 10000);
-                await ampmButton.click();
-                await driver.sleep(1000);
-                await driver
-                    .wait(
-                        until.elementLocated(
-                            By.xpath(
-                                "/html/body/div/div/div/div[2]/div/div/div[3]/div[2]/div/div/div/div[2]/div[1]/div[1]/div/div/form/div[2]/div[1]/div[2]/input"
-                            )
-                        ),
-                        10000
-                    )
-                    .sendKeys("12/09/2024");
-                const submitButton = await driver.findElement(By.xpath("/html/body/div/div/div/div[2]/div/div/div[3]/div[2]/div/div/div/div[2]/div[1]/div[1]/div/div/form/div[7]/button"));
-                await submitButton.click();
-                console.log("Form submitted.");
-                await driver.sleep(2000);
+                // // Locate and click the specific button in the hours column
+                // const hourButton = await driver.wait(
+                //     until.elementLocated(
+                //         By.xpath(
+                //             "/html/body/div/div/div/div[2]/div/div/div[3]/div[2]/div/div/div/div[2]/div[1]/div[1]/div/div/form/div[1]/div[1]/div[2]/div/div[2]/div[1]/button[11]"
+                //         )
+                //     ),
+                //     20000
+                // );
+                // await driver.wait(until.elementIsVisible(hourButton), 10000);
+                // await driver.sleep(1000);
+                // await hourButton.click();
+                // const minuteButton = await driver.wait(
+                //     until.elementLocated(
+                //         By.xpath(
+                //             "/html/body/div/div/div/div[2]/div/div/div[3]/div[2]/div/div/div/div[2]/div[1]/div[1]/div/div/form/div[1]/div[1]/div[2]/div/div[2]/div[2]/button[9]"
+                //         )
+                //     ),
+                //     20000
+                // );
+                // await driver.wait(until.elementIsVisible(hourButton), 10000);
+                // await minuteButton.click();
+                // await driver.sleep(1000);
+                // const ampmButton = await driver.wait(
+                //     until.elementLocated(
+                //         By.xpath(
+                //             "/html/body/div/div/div/div[2]/div/div/div[3]/div[2]/div/div/div/div[2]/div[1]/div[1]/div/div/form/div[1]/div[1]/div[2]/div/div[2]/div[3]/button[3]"
+                //         )
+                //     ),
+                //     20000
+                // // );
+                // await driver.wait(until.elementIsVisible(hourButton), 10000);
+                // await ampmButton.click();
+                // await driver.sleep(1000);
+                // await driver
+                //     .wait(
+                //         until.elementLocated(
+                //             By.xpath(
+                //                 "/html/body/div/div/div/div[2]/div/div/div[3]/div[2]/div/div/div/div[2]/div[1]/div[1]/div/div/form/div[2]/div[1]/div[2]/input"
+                //             )
+                //         ),
+                //         10000
+                //     )
+                //     .sendKeys("12/09/2024");
+                // const submitButton = await driver.findElement(By.xpath("/html/body/div/div/div/div[2]/div/div/div[3]/div[2]/div/div/div/div[2]/div[1]/div[1]/div/div/form/div[7]/button"));
+                // await submitButton.click();
+                // console.log("Form submitted.");
+                // await driver.sleep(2000);
                 const copylink = await driver.wait(
                     until.elementLocated(
                         By.xpath("/html/body/div/div/div/div[2]/div/div/div[3]/div[2]/div/div/div/div[2]/div[2]/div/div/button")

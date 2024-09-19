@@ -33,7 +33,9 @@ export default async function deleteDiscussionComment(driver) {
         ),
         10000
       );
+      await driver.sleep(1000);
       await clickOnDeleteButton.click();
+      await driver.sleep(2000);
     });
   });
 }

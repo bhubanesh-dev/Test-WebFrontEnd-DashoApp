@@ -135,7 +135,7 @@ export default async function createClass(driver) {
                         ),
                         10000
                     )
-                    .sendKeys("sample Test");
+                    .sendKeys("Main Test");
                 const submitButton = await driver.findElement(
                     By.xpath(
                         "/html/body/div/div/div/div[2]/div/div/div[3]/div[1]/div[1]/div/form/div[5]/button"

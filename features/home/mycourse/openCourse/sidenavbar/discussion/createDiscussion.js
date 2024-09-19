@@ -12,6 +12,7 @@ export default async function createDiscussion(driver) {
     });
 
     it("should a create discussion form", async function () {
+      await driver.sleep(1500);
       // Wait until the button to open the form is located
       const createButton = await driver.wait(
         until.elementLocated(
