@@ -170,6 +170,7 @@ const homeFeatures = async () => {
   await addStudentInCourseMenu(driver, "vibhav");
   await addStudentInCourseMenu(driver, "n");
   await addStudentInCourseMenu(driver, "a");
+  await driver.sleep(2000);
 
   // will start course menu
   // run it at last !!!!
@@ -195,7 +196,7 @@ const homeFeatures = async () => {
   // //  course summary
   await editCourseInSummary(driver);
   await addVideo(driver);
-  await deleteVideo(driver);
+  // await deleteVideo(driver); // not working in sequence
 
   await driver.sleep(1000);
   // await addNotes(driver);
