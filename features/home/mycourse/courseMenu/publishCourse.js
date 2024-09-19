@@ -22,7 +22,7 @@ export default async function deleteCourse(driver) {
         .wait(
           until.elementLocated(
             By.xpath(
-              "/html/body/div/div/div/div[2]/div/div/div[4]/div[2]/div[1]/div/div/div[2]"
+              "/html/body/div/div/div/div[2]/div/div/div[4]/div/div[1]/div/div/div[2]"
             )
           ),
           10000
@@ -34,7 +34,7 @@ export default async function deleteCourse(driver) {
         .wait(
           until.elementLocated(
             By.xpath(
-              "/html/body/div/div/div/div[2]/div/div/div[4]/div[1]/div[1]/div/div/div[2]/div/div/button[4]"
+              "/html/body/div/div/div/div[2]/div/div/div[4]/div/div[1]/div/div/div[2]/div/div/button[4]"
             )
           ),
           10000
@@ -69,7 +69,7 @@ export default async function deleteCourse(driver) {
          .wait(
            until.elementLocated(
              By.xpath(
-               "/html/body/div/div/div/div[2]/div/div/div[4]/div[2]/div[1]/div/div/div[2]"
+               "/html/body/div/div/div/div[2]/div/div/div[4]/div/div[1]/div/div/div[2]"
              )
            ),
            10000
@@ -81,7 +81,7 @@ export default async function deleteCourse(driver) {
          .wait(
            until.elementLocated(
              By.xpath(
-               "/html/body/div/div/div/div[2]/div/div/div[4]/div[2]/div[1]/div/div/div[2]/div/div/button[4]"
+               "/html/body/div/div/div/div[2]/div/div/div[4]/div/div[1]/div/div/div[2]/div/div/button[4]"
              )
            ),
            10000

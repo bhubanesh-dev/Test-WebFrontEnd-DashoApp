@@ -77,6 +77,7 @@ import {
   updateClassAttd,
   updateClassAttendance,
   updateTimeTable,
+  viewAssignmentFile,
   viewDetailOfClass,
   viewDetailsOfAssignment,
   viewDetailsOfClasses,
@@ -164,7 +165,7 @@ describe("Login Flow Test", function () {
 
 const homeFeatures = async () => {
   // // once run
-  await enrollRequest(driver);
+
   await createCourse(driver);
   await addStudentInCourseMenu(driver, "vibhav");
   await addStudentInCourseMenu(driver, "n");
@@ -194,8 +195,8 @@ const homeFeatures = async () => {
   // //  course summary
   await editCourseInSummary(driver);
   await addVideo(driver);
+  await deleteVideo(driver);
 
-  // rechek not work await deleteVideo(driver);
   await driver.sleep(1000);
   // await addNotes(driver);
   // comment down module not working
@@ -248,9 +249,11 @@ const homeFeatures = async () => {
   await createAssignment(driver);
   await driver.sleep(15000);
   // // // rechek : may be bug in state management for submiting a assignment at the time of edit
-  // await  editAssignment(driver);
+  await editAssignment(driver);
 
   await viewDetailsOfAssignment(driver);
+  await viewAssignmentFile(driver);
+  await deleteAssignmentFile(driver);
   await driver.sleep(1000);
   await addStudentGradeInViewDetailsOfAssignment(driver);
   await driver.sleep(1000);
@@ -288,6 +291,8 @@ const homeFeatures = async () => {
 
   await driver.sleep(2000);
   await deleteCourse(driver);
+
+  await enrollRequest(driver);
 
   // await logout(driver);
 };

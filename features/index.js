@@ -48,6 +48,8 @@ import editAssignment from "./home/mycourse/openCourse/sidenavbar/assignment/edi
 import deleteAssignment from "./home/mycourse/openCourse/sidenavbar/assignment/deleteAssignment.js";
 import viewDetailsOfAssignment from "./home/mycourse/openCourse/sidenavbar/assignment/viewDetailsOfAssignment.js";
 import deleteAssignmentFile from "./home/mycourse/openCourse/sidenavbar/assignment/deleteAssignmentFile.js";
+import viewAssignmentFile from "./home/mycourse/openCourse/sidenavbar/assignment/viewAssignmentFile.js";
+import deleteAssignmentFile from "./home/mycourse/openCourse/sidenavbar/assignment/deleteAssignmentFile.js";
 import addStudentGradeInViewDetailsOfAssignment from "./home/mycourse/openCourse/sidenavbar/assignment/addStudentGradeInViewDetailsOfAssignment.js";
 import closeViewDetailsOfAssignment from "./home/mycourse/openCourse/sidenavbar/assignment/closeViewDetailsOfAssignment.js";
 
@@ -165,4 +167,6 @@ export {
   openNoticeTab,
   deleteNoticeInHome,
   toggleNoticeReadStatusInHome,
+  viewAssignmentFile,
+  deleteAssignmentFile
 };

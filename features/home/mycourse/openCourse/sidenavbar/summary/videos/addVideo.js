@@ -97,11 +97,12 @@ export default async function addVideo(driver) {
           20000
         )
         .click();
-        await driver.sleep(3000);
+     
     });
 
     after(async function () {
       // Check whether the video card is created
+      await driver.sleep(2000);
       const element = await driver.wait(
         until.elementLocated(
           By.xpath(

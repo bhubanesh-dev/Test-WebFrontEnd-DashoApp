@@ -21,7 +21,7 @@ export default async function editCourse(driver) {
         .wait(
           until.elementLocated(
             By.xpath(
-              "/html/body/div/div/div/div[2]/div/div/div[4]/div[2]/div[1]/div/div/div[2]"
+              "/html/body/div/div/div/div[2]/div/div/div[4]/div/div[1]/div/div/div[2]"
             )
           ),
           10000
@@ -33,7 +33,7 @@ export default async function editCourse(driver) {
         .wait(
           until.elementLocated(
             By.xpath(
-              "/html/body/div/div/div/div[2]/div/div/div[4]/div[2]/div[1]/div/div/div[2]/div/div/button[1]"
+              "/html/body/div/div/div/div[2]/div/div/div[4]/div/div[1]/div/div/div[2]/div/div/button[1]"
             )
           ),
           10000
@@ -46,14 +46,14 @@ export default async function editCourse(driver) {
       await driver
         .findElement(
           By.xpath(
-            "/html/body/div/div/div/div[2]/div/div/div[4]/div[1]/div[1]/form/div[3]/div/div[2]/input"
+            "/html/body/div/div/div/div[2]/div/div/div[4]/div/div[1]/form/div[3]/div/div[2]/input"
           )
         )
         .clear(); // Clear the input field before sending new keys
       await driver
         .findElement(
           By.xpath(
-            "/html/body/div/div/div/div[2]/div/div/div[4]/div[1]/div[1]/form/div[3]/div/div[2]/input"
+            "/html/body/div/div/div/div[2]/div/div/div[4]/div/div[1]/form/div[3]/div/div[2]/input"
           )
         )
         .sendKeys("sample test with edit name from course menu");
@@ -62,7 +62,7 @@ export default async function editCourse(driver) {
       const selectClass = await driver.wait(
         until.elementLocated(
           By.xpath(
-            "/html/body/div/div/div/div[2]/div/div/div[4]/div[1]/div[1]/form/div[4]/div[1]/div[2]/select"
+            "/html/body/div/div/div/div[2]/div/div/div[4]/div/div[1]/form/div[4]/div[1]/div[2]/select"
           )
         ),
         10000 // Wait for up to 10 seconds
@@ -76,7 +76,7 @@ export default async function editCourse(driver) {
       const selectBoard = await driver.wait(
         until.elementLocated(
           By.xpath(
-            "/html/body/div/div/div/div[2]/div/div/div[4]/div[1]/div[1]/form/div[4]/div[2]/div[2]/select"
+            "/html/body/div/div/div/div[2]/div/div/div[4]/div/div[1]/form/div[4]/div[2]/div[2]/select"
           )
         ),
         10000
@@ -90,7 +90,7 @@ export default async function editCourse(driver) {
       const selectSubject = await driver.wait(
         until.elementLocated(
           By.xpath(
-            "/html/body/div/div/div/div[2]/div/div/div[4]/div[1]/div[1]/form/div[4]/div[3]/div[2]/select"
+            "/html/body/div/div/div/div[2]/div/div/div[4]/div/div[1]/form/div[4]/div[3]/div[2]/select"
           )
         ),
         10000
@@ -101,7 +101,7 @@ export default async function editCourse(driver) {
       await driver
         .findElement(
           By.xpath(
-            "/html/body/div/div/div/div[2]/div/div/div[4]/div[1]/div[1]/form/div[6]/button"
+            "/html/body/div/div/div/div[2]/div/div/div[4]/div/div[1]/form/div[6]/button"
           )
         )
         .click();
