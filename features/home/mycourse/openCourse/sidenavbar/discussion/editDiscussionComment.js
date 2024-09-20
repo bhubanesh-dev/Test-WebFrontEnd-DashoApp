@@ -50,7 +50,9 @@ export default async function editDiscussionComment(driver) {
           "/html/body/div/div/div/div[2]/div/div/div[2]/div/div[3]/div[2]/div/button[1]"
         )
       );
+      await driver.sleep(1000);
       await saveButton.click();
+      await driver.sleep(1000);
     });
   });
 }

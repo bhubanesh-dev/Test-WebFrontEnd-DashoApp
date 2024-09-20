@@ -34,7 +34,7 @@ export default async function changePictureInCourse(driver) {
         .wait(
           until.elementLocated(
             By.xpath(
-              "/html/body/div/div/div/div[2]/div/div/div[4]/div[1]/div[1]/div/div/div[2]"
+              "/html/body/div/div/div/div[2]/div/div/div[4]/div/div[1]/div/div/div[2]"
             )
           ),
           10000
@@ -47,7 +47,7 @@ export default async function changePictureInCourse(driver) {
         .wait(
           until.elementLocated(
             By.xpath(
-              "/html/body/div/div/div/div[2]/div/div/div[4]/div[1]/div[1]/div/div/div[2]/div/div/button[2]"
+              "/html/body/div/div/div/div[2]/div/div/div[4]/div/div[1]/div/div/div[2]/div/div/button[2]"
             )
           ),
           10000
@@ -57,7 +57,7 @@ export default async function changePictureInCourse(driver) {
       // Find the file input and upload the file
       const fileInput = await driver.findElement(
         By.xpath(
-          "/html/body/div/div/div/div[2]/div/div/div[4]/div[1]/div[1]/div/input"
+          "/html/body/div/div/div/div[2]/div/div/div[4]/div/div[1]/div/input"
         )
       );
       await fileInput.sendKeys('D:\\dashoTest\\assests\\notes.png'); // Send the file path for upload
@@ -67,7 +67,7 @@ export default async function changePictureInCourse(driver) {
         .wait(
           until.elementLocated(
             By.xpath(
-              "/html/body/div/div/div/div[2]/div/div/div[4]/div[1]/div[1]/div/button"
+              "/html/body/div/div/div/div[2]/div/div/div[4]/div/div[1]/div/button"
             )
           ),
           10000

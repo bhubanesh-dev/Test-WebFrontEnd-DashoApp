@@ -48,6 +48,7 @@ export default async function addVideo(driver) {
           20000
         )
         .click();
+        await driver.sleep(1000);
 
       // Fill in the video title
       await driver
@@ -96,10 +97,12 @@ export default async function addVideo(driver) {
           20000
         )
         .click();
+     
     });
 
     after(async function () {
       // Check whether the video card is created
+      await driver.sleep(2000);
       const element = await driver.wait(
         until.elementLocated(
           By.xpath(
@@ -113,4 +116,4 @@ export default async function addVideo(driver) {
       await driver.sleep(10000);
     });
   });
-}
+};

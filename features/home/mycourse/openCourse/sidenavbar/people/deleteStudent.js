@@ -9,7 +9,7 @@ export default async function deleteStudent(driver) {
         throw new Error("driver not set");
       }
     });
-    it("should delete a teacher", async function () {
+    it("should delete a student", async function () {
       // click on delete student button
       await driver.sleep(1000);
       await driver

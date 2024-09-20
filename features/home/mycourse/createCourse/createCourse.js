@@ -40,7 +40,7 @@ export default async function createCourse(driver) {
           ),
           15000 // Increased timeout
         )
-        .sendKeys("sample Test");
+        .sendKeys("Main Test");
 
         await driver.sleep(2000);
       // Wait until Class dropdown is present and select the value
@@ -93,6 +93,8 @@ export default async function createCourse(driver) {
           15000 // Increased timeout
         )
         .click();
+
+        await driver.sleep(3000);
 
       // main test
       // Check if the button with text "sample test" is present

@@ -2,7 +2,7 @@ import webdriver from "selenium-webdriver";
 import { Builder, By, until } from "selenium-webdriver";
 import assert from "assert";
 
-export default function editAssignment(driver) {
+export default async function editAssignment(driver) {
   describe("edit  Assignment ", function () {
     this.timeout(60000); // Set a timeout to 60 seconds
 
